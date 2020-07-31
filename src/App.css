@@ -1,38 +1,133 @@
-.App {
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #1b6ca8;
+}
+
+.container {
+  max-width: 700px;
   text-align: center;
+  font-size: 3.5rem;
+  padding: 1.5em 0;
+  margin: 0 auto;
+  transform: translateY(60%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.timer {
+  color: #fff;
+  font-size: 8rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.timer .minutes {
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.timer .seconds {
+  font-size: 6rem;
+}
+
+/* .buttons {
   display: flex;
-  flex-direction: column;
+  background-color: yellow;
+} */
+
+.btn {
+  font-size: 1.4rem;
+  border-radius: 50%;
+  border: 3px solid #fcd5ceaf;
+  /* background-color: black; */
+  color: white;
+  padding: 0.6em;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn + .btn {
+  margin-left: 2em;
+}
+
+.darken {
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  opacity: 0.6;
 }
 
-.App-link {
-  color: #61dafb;
+.box-container {
+  position: relative;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-40%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box-container > .box {
+  /* position: absolute;
+  left: 0;
+  top: 0; */
+  background-color: black;
+  color: #fff;
+  padding: 9em;
+  text-align: center;
+  /* transform: translate(50%, 50%); */
+}
+
+.box > h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 5;
+}
+
+.box > .close-btn {
+  padding: 5px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-notification {
+  display: none;
+}
+
+.change-minute {
+  /* background-color: red; */
+  transform: translateY(-50%);
+}
+
+.change-minute > span {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.change-minute > * {
+  margin-left: 15px;
+}
+
+.btn1 {
+  border-radius: 50%;
+  border: 2px solid #fcd5ceaf;
+  color: #fff;
+  padding: 0.1em;
+  cursor: pointer;
 }
